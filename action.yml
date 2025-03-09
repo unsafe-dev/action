@@ -1,0 +1,19 @@
+name: "Run Eval Engine"
+description: "Runs the laalshaitaan/eval-engine Docker image with arguments."
+inputs:
+  arg1:
+    description: "Input file"
+    required: true
+  arg2:
+    description: "Intermediaries"
+    required: true
+  arg3:
+    description: "Output file"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.arg1 }}
+    - ${{ inputs.arg2 }}
+    - ${{ inputs.arg3 }}
